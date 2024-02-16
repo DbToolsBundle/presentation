@@ -1,0 +1,103 @@
+/**
+ * adapted from Beige theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+@import "./makina-fonts";
+
+// Include theme-specific
+// @font-face {
+// 	font-family: 'Arvo';
+// 	src: url('./fonts/Arvo-Regular.ttf') format('truetype');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+// @font-face {
+// 	font-family: 'Roboto';
+// 	src: url('./fonts/RobotoSlab-Regular.ttf') format('truetype');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+
+// Override theme settings (see ../template/settings.scss)
+$mainColor: #212529;
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$heading1Size: 2.77em;
+// font-size: 3.5rem;
+$headingFontWeight: 900;
+$headingColor: #221157;
+$headingTextShadow: none;
+$backgroundColor: #F2F2F2;
+$linkColor: #561fa8;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: rgba(83,55,63,.4);
+$headingTextTransform: none;
+
+// Change text colors against dark slide backgrounds
+@include dark-bg-text-color(#fff);
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.reveal .slide-background {
+	background-image: url(../../../assets/makina.svg);
+	background-repeat: no-repeat;
+	background-position-y: 100%;
+	background-size: 8%;
+}
+
+.emphase {
+	color: #561fa8;
+	// box-shadow: inset 0 -14px 0 rgba(83,55,63,.2);
+}
+
+.reveal ul {
+	font-size: 80%;
+	margin: 0;
+	padding: 0;
+	li {
+		padding: 0.1em;
+		text-align: center;
+		svg {
+			fill: #561fa8;
+		}
+	}
+	&.tag-list {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		li {
+			&:after {
+				content: " - ";
+			}
+			&:last-child:after {
+				content: "";
+		}
+
+		}
+	}
+	&.feature-list {
+		list-style: none;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.8em;
+		img, p {
+			margin: 0;
+		}
+		p {
+			color: $mainColor;
+			font-weight: 600;
+		}
+	}
+}
