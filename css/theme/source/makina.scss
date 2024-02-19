@@ -35,7 +35,7 @@ $heading1Size: 2.77em;
 $headingFontWeight: 900;
 $headingColor: #221157;
 $headingTextShadow: none;
-$backgroundColor: #F2F2F2;
+$backgroundColor: white;
 $linkColor: #561fa8;
 $linkColorHover: lighten( $linkColor, 20% );
 $selectionBackgroundColor: rgba(83,55,63,.4);
@@ -49,55 +49,90 @@ $headingTextTransform: none;
 @import "../template/theme";
 // ---------------------------------------------
 
-.reveal .slide-background {
-	background-image: url(../../../assets/makina.svg);
-	background-repeat: no-repeat;
-	background-position-y: 100%;
-	background-size: 8%;
-}
 
 .emphase {
 	color: #561fa8;
 	// box-shadow: inset 0 -14px 0 rgba(83,55,63,.2);
 }
 
-.reveal ul {
-	font-size: 80%;
-	margin: 0;
-	padding: 0;
-	li {
-		padding: 0.1em;
-		text-align: center;
-		svg {
-			fill: #561fa8;
-		}
+.reveal {
+	.slide-background {
+		background-image: url(../../../assets/makina.svg);
+		background-repeat: no-repeat;
+		background-position-y: 100%;
+		background-size: 8%;
 	}
-	&.tag-list {
-		list-style: none;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		li {
-			&:after {
-				content: " - ";
-			}
-			&:last-child:after {
-				content: "";
-		}
 
+	ul {
+		font-size: 80%;
+		margin: 0;
+		padding: 0;
+		li {
+			padding: 0.1em;
+			text-align: center;
+			svg {
+				fill: #561fa8;
+			}
+		}
+		&.tag-list {
+			list-style: none;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			li {
+				&:after {
+					content: " • ";
+				}
+				&:last-child:after {
+					content: "";
+			}
+
+			}
+		}
+		&.feature-list {
+			list-style: none;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 0.8em;
+			li {
+				background-color: #F6F6F7;
+				border-radius: 0.5em;
+				padding: 1em;
+				text-align: left;
+				p {
+					display: flex;
+					align-items: center;
+					margin: -.5em 0 0 0 ;
+					color: $mainColor;
+					color: #561FA8;
+					font-weight: 600;
+					img {
+						margin: 0;
+						margin-right: .5em;
+					}
+				}
+				pre {
+					margin: 0.1em;
+				}
+			}
 		}
 	}
-	&.feature-list {
-		list-style: none;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 0.8em;
-		img, p {
-			margin: 0;
-		}
-		p {
-			color: $mainColor;
-			font-weight: 600;
+
+	li pre {
+		margin: 0;
+	}
+
+	div.docs {
+		position: relative;
+		a {
+			display: block;
+			position: absolute;
+			bottom: -1em;
+			right: -2em;
+			width: 1em;
+			height: 1em;
+			fill: $headingColor;
 		}
 	}
+
 }
