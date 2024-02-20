@@ -349,7 +349,7 @@
 			</section>
 			<section>
 				<h3>A GDPR-friendly workflow</h3>
-				<div class="r-stack">
+				<div class="r-stack" style="margin-top: -0.4em;margin-bottom: -0.2em">
 					<img src="assets/step-0.png"/>
 					<img src="assets/step-1.png" class="fragment" data-fragment-index="2"/>
 					<img src="assets/step-2-1.png" class="fragment" data-fragment-index="3"/>
@@ -379,6 +379,8 @@
 				</div>
 				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/command.html#a-gdpr-friendly-workflow" target="_blank"><img src="assets/doc.svg"/></a>
 				<aside class="notes" data-markdown="">
+					* Objectif1 : avoir des données anonymiser en local
+					* Objectif2 : ne jamais avoir des données snesibles sur un env non-sécurisé
 					* Pourquoi on ne peut pas faire prod -> local
 					* Éteindre les services de la préprod avant tout chose
 					* Preprod peut-être n'importe quel runner sur une CI
@@ -453,6 +455,10 @@
 					<li>Build with a complete <a href="https://php-query-builder.readthedocs.io/" target="_blank">query builder</a></li>
 				</ul>
 				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/internals.html" target="_blank"><img src="assets/doc.svg"/></a>
+				<aside class="notes" data-markdown="">
+					* On anonymise des colonnes de DB et pas des champs d'entité
+					* La requête d'update est optimisé en fonction du type de base de données
+				</aside>
 			</section>
 			<section>
 				<h4 style="opacity: 50%;">DbToolsBundle</h4>
@@ -482,7 +488,7 @@
 				</code></pre>
 				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/custom-anonymizers.html" target="_blank"><img src="assets/doc.svg"/></a>
 				<aside class="notes" data-markdown="">
-					* Custom anonymzer in src/Anomymizer
+					* Custom anonymizer in src/Anomymizer
 					* Créer son pack avec le template dispo sur github
 				</aside>
 			</section>
