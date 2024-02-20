@@ -1123,6 +1123,12 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   background-position-y: 100%;
   background-size: 8%;
 }
+.reveal .grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+.reveal .grid-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
 .reveal ul {
   font-size: 80%;
   margin: 0;
@@ -1150,16 +1156,23 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .reveal ul.feature-list {
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 0.8em;
 }
-.reveal ul.feature-list li {
+.reveal ul.feature-list.feature-left li {
+  text-align: left;
+}
+.reveal ul.feature-list.feature-center li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.reveal ul.feature-list > li {
   background-color: #F6F6F7;
   border-radius: 0.5em;
   padding: 1em;
-  text-align: left;
 }
-.reveal ul.feature-list li p {
+.reveal ul.feature-list > li p {
   display: flex;
   align-items: center;
   margin: -0.5em 0 0 0;
@@ -1167,25 +1180,21 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   color: #561FA8;
   font-weight: 600;
 }
-.reveal ul.feature-list li p img {
+.reveal ul.feature-list > li p img {
   margin: 0;
   margin-right: 0.5em;
 }
-.reveal ul.feature-list li pre {
+.reveal ul.feature-list > li pre {
   margin: 0.1em;
 }
 .reveal li pre {
   margin: 0;
 }
-.reveal div.docs {
-  position: relative;
-}
-.reveal div.docs a {
+.reveal a.docs {
   display: block;
   position: absolute;
   bottom: -1em;
   right: -2em;
   width: 1em;
   height: 1em;
-  fill: #221157;
 }

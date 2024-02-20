@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 594.78 509.68" xmlns="http://www.w3.org/2000/svg">
+<g transform="matrix(3.7795 0 0 3.7795 -159.84 -268.4)">
+<g transform="translate(-5.9799 52.008)">
+<path d="m117.56 30.707c-0.84667 0-8.255 1.3467-8.255 1.3467-0.34396 11.009-8.0433 20.764-23.892 22.458l-3.3867-6.1039-6.641 0.65617 2.9898 15.899-30.107-1.2965 3.2279 10.98c32.435 10.451 30.954 40.349 23.889 67.072 12.435 14.023 37.518 12.647 49.212 11.404 0.82021-16.457 13.864-17.066 35.957-8.5196 2.9898-4.6567 4.9742-9.525 11.8-13.414l-12.33-36.909-7.276 1.6404c2.9104-5.5827 8.5196-13.203 13.335-16.775l4.1275-22.992c-23.442-1.6669-38.735-12.266-52.652-25.445z" fill="#221157" stroke-width=".26458"/>
+<g class="agence-pointer" transform="matrix(.19987 0 0 .19987 -302.03 -1292.9)" data-html="true" data-slide-to="0" data-target="#liste-agences-contact" data-toggle="tooltip" title="">
+<ellipse transform="translate(2023 7135.9)" cx="17.5" cy="10" rx="17.5" ry="10" fill="#50af55"/>
+<path d="m2063.7 7103.6c0 13.021-23.335 43.578-23.335 43.578s-23.336-30.558-23.336-43.578a23.337 23.337 0 1 1 46.671 0z" fill="#f85446"/>
+<ellipse transform="translate(2029 7092.9)" cx="11.5" cy="12" rx="11.5" ry="12" fill="#fff"/>
+</g>
+<g class="agence-pointer" transform="matrix(.19987 0 0 .19987 -295.81 -1370.5)" data-html="true" data-slide-to="1" data-target="#liste-agences-contact" data-toggle="tooltip" title="">
+<ellipse transform="translate(2023 7135.9)" cx="17.5" cy="10" rx="17.5" ry="10" fill="#50af55"/>
+<path d="m2063.7 7103.6c0 13.021-23.335 43.578-23.335 43.578s-23.336-30.558-23.336-43.578a23.337 23.337 0 1 1 46.671 0z" fill="#f85446"/>
+<ellipse transform="translate(2029 7092.9)" cx="11.5" cy="12" rx="11.5" ry="12" fill="#fff"/>
+</g>
+<g class="agence-pointer" transform="matrix(.19987 0 0 .19987 -332.11 -1346)" data-html="true" data-slide-to="2" data-target="#liste-agences-contact" data-toggle="tooltip" title="">
+<ellipse transform="translate(2023 7135.9)" cx="17.5" cy="10" rx="17.5" ry="10" fill="#50af55"/>
+<path d="m2063.7 7103.6c0 13.021-23.335 43.578-23.335 43.578s-23.336-30.558-23.336-43.578a23.337 23.337 0 1 1 46.671 0z" fill="#f85446"/>
+<ellipse transform="translate(2029 7092.9)" cx="11.5" cy="12" rx="11.5" ry="12" fill="#fff"/>
+</g>
+<g class="agence-pointer" transform="matrix(.19987 0 0 .19987 -302.03 -1292.9)" data-html="true" data-slide-to="3" data-target="#liste-agences-contact" data-toggle="tooltip" title="">
+<ellipse transform="translate(2023 7135.9)" cx="17.5" cy="10" rx="17.5" ry="10" fill="#50af55"/>
+<path d="m2063.7 7103.6c0 13.021-23.335 43.578-23.335 43.578s-23.336-30.558-23.336-43.578a23.337 23.337 0 1 1 46.671 0z" fill="#f85446"/>
+<ellipse transform="translate(2029 7092.9)" cx="11.5" cy="12" rx="11.5" ry="12" fill="#fff"/>
+</g>
+<g class="agence-pointer" transform="matrix(.19987 0 0 .19987 -265.25 -1389)" data-html="true" data-slide-to="4" data-target="#liste-agences-contact" data-toggle="tooltip" title="">
+<ellipse transform="translate(2023 7135.9)" cx="17.5" cy="10" rx="17.5" ry="10" fill="#50af55"/>
+<path d="m2063.7 7103.6c0 13.021-23.335 43.578-23.335 43.578s-23.336-30.558-23.336-43.578a23.337 23.337 0 1 1 46.671 0z" fill="#f85446"/>
+<ellipse transform="translate(2029 7092.9)" cx="11.5" cy="12" rx="11.5" ry="12" fill="#fff"/>
+</g>
+</g>
+<g transform="translate(13.655 20.88)" fill="#221157">
+<text x="128.22531" y="58.176811" fill="#221157" font-family="sans-serif" font-size="10.583px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="128.22531" y="58.176811" fill="#221157" font-family="'Fira Code'" font-size="10.583px" font-weight="600" stroke-width=".26458" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Bruxelles</tspan></text>
+</g>
+<g transform="translate(-28.269 66.474)" fill="#ffffff" font-family="sans-serif" font-size="10.583px" stroke-width=".26458">
+<text x="139.23329" y="53.178429" style="line-height:1.25" xml:space="preserve"><tspan x="139.23329" y="53.178429" fill="#ffffff" font-family="'Fira Code'" font-size="10.583px" font-weight="600" stroke-width=".26458" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Paris</tspan></text>
+<text x="104.18016" y="75.703423" style="line-height:1.25" xml:space="preserve"><tspan x="104.18016" y="75.703423" fill="#ffffff" font-family="'Fira Code'" font-size="10.583px" font-weight="600" stroke-width=".26458" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Nantes</tspan></text>
+<text x="134.92683" y="106.46304" style="line-height:1.25" xml:space="preserve"><tspan x="134.92683" y="106.46304" fill="#ffffff" font-family="'Fira Code'" font-size="10.583px" font-weight="600" stroke-width=".26458" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Toulouse</tspan></text>
+</g>
+</g>
+</svg>

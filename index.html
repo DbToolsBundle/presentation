@@ -105,12 +105,12 @@
 				<h3>Makina Corpus</h3>
 				<div style="display: flex;align-items: center;justify-content: space-around;">
 					<img style="max-width:300px;" src="assets/makina.svg" />
-					<img style="max-width:300px;" src="assets/makina-agences.png" />
+					<img style="max-width:300px;" src="assets/makina-agences.svg" />
 				</div>
 				<ul class="tag-list">
 					<li>Digital Service Company</li>
 					<li>~50 people</li>
-					<li>working only with FLOSS</li>
+					<li>working only with <strong class="emphase">FLOSS</strong></li>
 				</ul>
 				<aside class="notes" data-markdown>
 					à l'époque ou les ESN s'appelait de **SS2I**, Makina se présentait comme
@@ -119,11 +119,27 @@
 			</section>
 			<section>
 				<h3>Makina Corpus</h3>
-				<div style="display: grid; grid-template-columns: 1fr 1fr 1fr;justify-items: center;">
-					<img src="assets/makina.png" style="width: 145px;margin-top: calc(var(--r-block-margin) + 7px)"/>
-					<img src="assets/makina-territoires.png " style="width: 160px"/>
-					<img src="assets/makina-formation.png" style="width: 150px"/>
-				</div>
+
+				<ul class="feature-list feature-center grid-3">
+					<li>
+						<img src="assets/makina.png" style="width: 145px;margin-top: calc(var(--r-block-margin) + 7px)"/>
+						<strong class="emphase">
+							Services
+						</strong>
+					</li>
+					<li>
+						<img src="assets/makina-territoires.png " style="width: 160px"/>
+						<strong class="emphase">
+							Products
+						</strong>
+					</li>
+					<li>
+						<img src="assets/makina-formation.png" style="width: 150px"/>
+						<strong class="emphase">
+							Training
+						</strong>
+					</li>
+				</ul>
 				<aside class="notes" data-markdown>
 					* Service applications web sur-mesure (PHP/Python, technos front diverses)
 					* Territoire - Produit (Tous open source, Geotrek)
@@ -151,7 +167,7 @@
 				<h3>DbToolsBundle</h3>
 				<p>A set of Symfony Console Commands</p>
 				<div>
-					<ul class="feature-list">
+					<ul class="feature-list feature-left grid-2">
 						<li>
 							<p>
 								<img src="assets/export.svg " />
@@ -190,36 +206,23 @@
 						</li>
 				</div>
 				</ul>
-				<div class="docs">
-					<a href="">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-							<path
-								d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
-						</svg>
-					</a>
-				</div>
+				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/" target="_blank"><img src="assets/doc.svg"/></a>
 				<aside class="notes" data-markdown>
 					* Une collection de commande Symfony
 				</aside>
 			</section>
 			<section>
 				<h3>DbToolsBundle</h3>
-				<p>Works with most popular Database vendors</p>
+				<img src="assets/doctrine.png" style="height:100px;">
+				<p>Works on top of Doctrine DBAL with most popular Database vendors:</p>
 				<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center ;column-gap: 1em;">
-					<img src="assets/pgsql.png" style="height:150px;">
-					<img src="assets/sqlite.png" style="height:80px;" />
-					<img src="assets/mariadb.png" style="height:100px;" />
-					<img src="assets/mysql.svg" style="height:100px;" />
-					<img src="assets/sqlserver.png" style="height:100px;" />
+					<img alt="postgresql" src="assets/pgsql.png" style="height:100px;">
+					<img alt="sqlite" src="assets/sqlite.png" style="height:60px;" />
+					<img alt="mariadb" src="assets/mariadb.png" style="height:80px;" />
+					<img alt="mysql" src="assets/mysql.svg" style="height:80px;" />
+					<img alt="sqlserver" src="assets/sqlserver.png" style="height:80px;" />
 				</div>
-				<div class="docs">
-					<a href="">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-							<path
-								d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
-						</svg>
-					</a>
-				</div>
+				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/getting-started/database-vendors.html" target="_blank"><img src="assets/doc.svg"/></a>
 			</section>
 			<section>
 				<h4 style="opacity: 50%;">DbToolsBundle</h4>
@@ -257,14 +260,7 @@
 					<li>Address</li>
 					<li>etc...</li>
 				</ul>
-				<div class="docs">
-					<a href="">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-							<path
-								d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
-						</svg>
-					</a>
-				</div>
+				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/essentials.html" target="_blank"><img src="assets/doc.svg"/></a>
 				<aside class="notes" data-markdown>
 					* Mapper chaque donnée à anonymier avec une méthode
 					d'anonymisation (un anonymiseur)
@@ -316,15 +312,7 @@
 							// ...
 					}
 					</code></pre>
-
-				<div class="docs">
-					<a href="">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-							<path
-								d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
-						</svg>
-					</a>
-				</div>
+					<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/essentials.html#example" target="_blank"><img src="assets/doc.svg"/></a>
 			</section>
 			<section>
 				<h3>Setting Up Anonymization</h3>
@@ -348,7 +336,6 @@
 						level       string       sample: [none, bad, good, expert]
 					----------- ------------ ---------------------------------------------------------------------------------
 					</code></pre>
-
 			</section>
 			<section>
 				<h4 style="opacity: 50%;">DbToolsBundle</h4>
@@ -388,15 +375,11 @@
 					user@local:~$ console db-tools:restore --filename /tmp/prod-anonymized.dump
 					</code></pre>
 				</div>
-
-				<div class="docs">
-					<a href="">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-							<path
-								d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
-						</svg>
-					</a>
-				</div>
+				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/command.html#a-gdpr-friendly-workflow" target="_blank"><img src="assets/doc.svg"/></a>
+				<aside class="notes" data-markdown="">
+					* Éteindre les services de la préprod avant tout chose
+					* Preprod peut-être n'importe quel runner sur une CI
+				</aside>
 			</section>
 			<section>
 				<h4 style="opacity: 50%;">DbToolsBundle</h4>
@@ -408,17 +391,20 @@
 			</section>
 			<section>
 				<h3>Performance</h3>
-				<p>
-					<a href="https://github.com/DbToolsBundle/benchmark-app" target="_blank">Benchmark app</a> with
-					a <em>Customer</em> entities which has
-				</p>
-				<ul class="tag-list">
-					<li>email</li>
-					<li>password</li>
-					<li>lastname</li>
-					<li>firstname</li>
-					<li>level (string among a sample of 4)</li>
-					<li>postal address</li>
+				<p>Try it on our <a href="https://github.com/DbToolsBundle/benchmark-app" target="_blank">benchmark app:</a></p>
+				<ul>
+					<li>4 DBAL connections (PostgreSQL, SQLite, MySQL, MariaDb)</li>
+					<li>the same <em>Customer</em> entities for each one with:
+						<ul class="tag-list">
+							<li>email</li>
+							<li>password</li>
+							<li>lastname</li>
+							<li>firstname</li>
+							<li>level (string among a sample of 4)</li>
+							<li>age</li>
+							<li>postal address</li>
+						</ul>
+					</li>
 				</ul>
 			</section>
 			<section>
@@ -456,7 +442,6 @@
 					</table>
 				</div>
 			</section>
-			<!-- <section data-background-image="assets/sql-query.png" style="background:#fff8" data-background-position="right" data-background-size="50%"> -->
 			<section>
 				<h3>Performance</h3>
 				<ul>
@@ -465,14 +450,7 @@
 					<li>Build with a complete <a href="https://php-query-builder.readthedocs.io/" target="_blank">query
 							builder</a></li>
 				</ul>
-				<div class="docs">
-					<a href="">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-							<path
-								d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
-						</svg>
-					</a>
-				</div>
+				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/internals.html" target="_blank"><img src="assets/doc.svg"/></a>
 			</section>
 			<section>
 				<h4 style="opacity: 50%;">DbToolsBundle</h4>
@@ -499,15 +477,8 @@
 					{
 
 						// ...
-					</code></pre>
-				<div class="docs">
-					<a href="">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-							<path
-								d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
-						</svg>
-					</a>
-				</div>
+				</code></pre>
+				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/custom-anonymizers.html" target="_blank"><img src="assets/doc.svg"/></a>
 			</section>
 			<section>
 				<h4 style="opacity: 50%;">DbToolsBundle</h4>
@@ -519,22 +490,21 @@
 			</section>
 			<section>
 				<h3>Contribute</h3>
-				<p>We need you to make the DbToolsBundle awesome!</p>
-				<ul style="list-style: none;display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5em;">
-					<li>📢 · Share
-						<ul>
+				<ul class="feature-list grid-3" style="gap: 1.5em;"">
+					<li>📢 · <strong class="emphase">Share</strong>
+						<ul style="padding-top: .5em;">
 							<li>Talk about it</li>
 							<li>Star on Github</li>
 						</ul>
 					</li>
-					<li>🪲 · Report
-						<ul>
+					<li>🪲 · <strong class="emphase">Report</strong>
+						<ul style="padding-top: .5em;">
 							<li>Missing documentation</li>
 							<li>Issues in code</li>
 						</ul>
 					</li>
-					<li>🧑‍💻 · Code
-						<ul>
+					<li>🧑‍💻 · <strong class="emphase">Code</strong>
+						<ul style="padding-top: .5em;">
 							<li>Check for <em><a target="_blank"
 										href="https://github.com/makinacorpus/DbToolsBundle/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22">good
 										first issues</a></em> on Github</li>
@@ -542,14 +512,8 @@
 						</ul>
 					</li>
 				</ul>
-				<div class="docs">
-					<a href="">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-							<path
-								d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
-						</svg>
-					</a>
-				</div>
+				<p>We need you to make the DbToolsBundle awesome!</p>
+				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/contribute/contribute.html" target="_blank"><img src="assets/doc.svg"/></a>
 			</section>
 			<section>
 				<h3>Thanks, any question?</h3>
