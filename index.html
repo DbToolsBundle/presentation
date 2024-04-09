@@ -17,8 +17,8 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
-				<div style="display: flex;align-items: center;justify-content: space-around;">
-					<div style="text-align: right; margin-right: 3em;">
+				<div style="display: flex;align-items: center;justify-content: space-around;"">
+					<div style="text-align: right; padding-right: 3em;">
 						<h3 class=""><span class="emphase">Anonymize</span> your data with Symfony and the</h2>
 						<h1 class=""><span class="emphase">DbToolsBundle</span></h1>
 					</div>
@@ -259,10 +259,8 @@
 				<aside class="notes" data-markdown>
 					* Mapper chaque donnée à anonymier avec une méthode
 					d'anonymisation (un anonymiseur)
-					* On anonymize des colonnes et pas des champs
-					(on y reviendra)
 					* Une liste d'anonymiseurs est fournit de base
-					(on verra plus tard comment l'étendre)
+					* Mais on peut l'étendre
 				</aside>
 			</section>
 			<section>
@@ -377,7 +375,7 @@
 					user@local:~$ console db-tools:restore --filename /tmp/prod-anonymized.dump
 					</code></pre>
 				</div>
-				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/command.html#a-gdpr-friendly-workflow" target="_blank"><img src="assets/doc.svg"/></a>
+				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/workflow.html" target="_blank"><img src="assets/doc.svg"/></a>
 				<aside class="notes" data-markdown="">
 					* Objectif1 : avoir des données anonymiser en local
 					* Objectif2 : ne jamais avoir des données snesibles sur un env non-sécurisé
@@ -411,6 +409,7 @@
 						</ul>
 					</li>
 				</ul>
+				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/performance.html" target="_blank"><img src="assets/doc.svg"/></a>
 			</section>
 			<section>
 				<h3>Performance</h3>
@@ -555,7 +554,9 @@
 		// - https://revealjs.com/config/
 		Reveal.initialize({
 			hash: true,
+			margin: 0.02,
 			slideNumber: 'c/t',
+			pdfSeparateFragments: false,
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 		});
