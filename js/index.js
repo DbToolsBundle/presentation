@@ -35,7 +35,16 @@ Reveal.initialize = options => {
 	// Invoke any enqueued API calls
 	enqueuedAPICalls.map( method => method( Reveal ) );
 
-	return Reveal.initialize();
+	return Reveal.initialize({
+		dependencies: [
+			{
+					src: 'node_modules/reveal_external/external/external.js',
+					condition: function() {
+							return !!document.querySelector( '[data-external],[data-external-replace]' );
+					}
+			},
+		]
+	});
 
 }
 

@@ -140,7 +140,13 @@ export default function( revealElement, options ) {
 		// 3. Options passed to the Reveal constructor
 		// 4. Options passed to Reveal.initialize
 		// 5. Query params
-		config = { ...defaultConfig, ...config, ...options, ...initOptions, ...Util.getQueryHash() };
+		config = {
+			...defaultConfig,
+			...config,
+			...options,
+			...initOptions,
+			...Util.getQueryHash(),
+		};
 
 		// Legacy support for the ?print-pdf query
 		if( /print-pdf/gi.test( window.location.search ) ) {

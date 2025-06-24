@@ -1,0 +1,285 @@
+<section>
+  <h3>Setting Up Anonymization</h3>
+  <p>
+    Map each table's <strong class="emphase">column</strong> you want to anonymize with an
+    <strong class="emphase"><em>Anonymizer</em></strong>.
+  </p>
+  <ul class="tag-list" style="padding: 0 3em;">
+    <li>Email</li>
+    <li>Password</li>
+    <li>Int</li>
+    <li>Float</li>
+    <li>String</li>
+    <li>Firstname</li>
+    <li>Lastname</li>
+    <li>Address</li>
+    <li>etc...</li>
+  </ul>
+  <a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/essentials.html" target="_blank"><img src="assets/doc.svg"/></a>
+  <aside class="notes" data-markdown>
+    **PRI**
+
+    * Mapper chaque donnée à anonymiser avec une méthode
+    d'anonymisation (un anonymiseur)
+    * Une liste d'anonymiseurs est fournit de base
+    * Mais on peut l'étendre
+  </aside>
+</section>
+<section>
+  <section>
+    <h3>Setting Up Anonymization</h3>
+    <pre><code class="language-yaml" data-trim data-line-numbers="4-4|5-5|6-8|9-11|12-14">
+      # db_tools.config.yaml
+      anonymization:
+          default:
+              customer:
+                  email_address: email
+                  password:
+                    anonymizer: password
+                    options: {algorithm: 'sodium', password: '123456789'}
+                  level:
+                      anonymizer: string
+                      options: {sample: ['none', 'bad', 'good', 'expert']}
+                  age:
+                      anonymizer: integer
+                      options: {min: 10, max: 99}
+      #...
+    </code></pre>
+    <p>With YAML, from a list of various <i>anonymizers</i></p>
+    <a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/essentials.html#example" target="_blank"><img src="assets/doc.svg"/></a>
+    <aside class="notes" data-markdown>
+      **PRI**
+
+      le cas général en yaml
+    </aside>
+  </section>
+  <section>
+    <h3>Setting Up Anonymization</h3>
+    <p>On Doctrine Entities, from a list of various <i>anonymizers</i></p>
+    <pre><code class="language-php" data-trim data-line-numbers="6-8|15-17|19-24|26-31|33-38">
+      namespace App\Entity;
+
+      use Doctrine\ORM\Mapping as ORM;
+      use MakinaCorpus\DbToolsBundle\Attribute\Anonymize;
+
+      #[ORM\Entity()]
+      #[ORM\Table(name: 'customer')]
+      class Customer
+      {
+          #[ORM\Id]
+          #[ORM\GeneratedValue]
+          #[ORM\Column]
+          private ?int $id = null;
+
+          #[ORM\Column(length: 180, unique: true)]
+          #[Anonymize(type: 'email')]
+          private ?string $emailAddress = null;
+
+          #[ORM\Column(length: 180, unique: true)]
+          #[Anonymize(
+            type: 'password',
+            ['password' => '123456789']
+          )]
+          private ?string $password = null;
+
+          #[ORM\Column]
+          #[Anonymize(
+            type: 'integer',
+            options: ['min' => 10, 'max' => 99]
+          )]
+          private ?int $age = null;
+
+          #[ORM\Column(length: 255)]
+          #[Anonymize(
+            type: 'string',
+            options: ['sample' => ['none', 'bad', 'good', 'expert']]
+          )]
+          private ?string $level = null;
+
+          #[ORM\Column]
+          private ?\DateTime $lastLogin = null;
+
+          // ...
+      }
+      </code></pre>
+      <a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/essentials.html#example" target="_blank"><img src="assets/doc.svg"/></a>
+      <aside class="notes" data-markdown>
+        **PRI**
+
+        le cas symfony avec attributs PHP (mais yaml possible)
+        le cas laravel dispo (config PHP)
+      </aside>
+  </section>
+</section>
+<section>
+  <h3>Setting Up Anonymization</h3>
+
+  <p>Check your config with:</p>
+  <pre style="margin-bottom:0;"><code class="language-sh" style="padding-bottom: 0.5em;" data-trim>
+    db-tools anonymization:dump-config
+  </code></pre>
+  <pre class="fragment" style="margin-top:0"><code class="language-txt" data-trim>
+    Table: customer
+    ---------------
+
+    ----------- ------------ ---------------------------------------------------------------------------------
+      Target      Anonymizer   Options
+    ----------- ------------ ---------------------------------------------------------------------------------
+      email       email
+      password    password
+      lastname    lastname
+      firstname   firstname
+      age         age          min: 10, max: 99
+      level       string       sample: [none, bad, good, expert]
+    ----------- ------------ ---------------------------------------------------------------------------------
+  </code></pre>
+  <aside class="notes" data-markdown>
+    **PRI**
+
+    **to SME**
+  </aside>
+</section>
+<section>
+  <h3>A GDPR-friendly workflow</h3>
+  <div class="r-stack" style="margin-top: -0.4em;margin-bottom: -0.2em">
+    <img src="assets/step-0.png"/>
+    <img src="assets/step-1.png" class="fragment" data-fragment-index="2"/>
+    <img src="assets/step-2-1.png" class="fragment" data-fragment-index="3"/>
+    <img src="assets/step-2-2.png" class="fragment" data-fragment-index="4"/>
+    <img src="assets/step-2-3.png" class="fragment" data-fragment-index="5"/>
+    <img src="assets/step-2-4.png" class="fragment" data-fragment-index="6"/>
+    <img src="assets/step-2-5.png" class="fragment" data-fragment-index="7"/>
+    <img src="assets/step-3.png" class="fragment" data-fragment-index="8"/>
+    <img src="assets/step-4.png" class="fragment" data-fragment-index="9"/>
+  </div>
+  <div class="r-stack">
+    <pre class="fragment" data-fragment-index="1"><code class="language-txt" data-trim>
+    user@prod:~$ db-tools restore --list
+    </code></pre>
+    <pre class="fragment" data-fragment-index="2"><code class="language-txt" data-trim>
+    user@preprod:~$ scp user@prod:/path/to/prod.dump /tmp/prod.dump
+    </code></pre>
+    <pre class="fragment" data-fragment-index="3"><code class="language-txt" data-trim>
+    user@preprod:~$ db-tools anonymize /tmp/prod.dump
+    </code></pre>
+    <pre class="fragment" data-fragment-index="8"><code class="language-txt" data-trim>
+    user@local:~$ scp user@preprod:/tmp/prod.dump /tmp/prod-anonymized.dump
+    </code></pre>
+    <pre class="fragment" data-fragment-index="9"><code class="language-txt" data-trim>
+    user@local:~$ db-tools restore --filename /tmp/prod-anonymized.dump
+    </code></pre>
+  </div>
+  <a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/workflow.html" target="_blank"><img src="assets/doc.svg"/></a>
+  <aside class="notes" data-markdown="">
+    **SME**
+
+    * Objectif1 : avoir des données anonymiser en local
+    * Objectif2 : ne jamais avoir des données snesibles sur un env non-sécurisé
+    * Pourquoi on ne peut pas faire prod -> local
+      => sinon données sensibles à un moment donné sur poste de dev
+    * Éteindre les services de la préprod avant tout chose
+    * cette une proposition qui convient à la plupart des cas, mais possible autrement
+    * Preprod pourrait être n'importe quel runner sur une CI juste besoin d'une bdd et php ou stack docker
+  </aside>
+</section>
+<section>
+  <h3>Custom Anonymizers</h3>
+
+  <pre><code class="language-php" data-trim>
+    namespace App\Anonymizer;
+
+    use MakinaCorpus\DbToolsBundle\Anonymization\Anonymizer\AbstractAnonymizer;
+    use MakinaCorpus\DbToolsBundle\Attribute\AsAnonymizer;
+
+    #[AsAnonymizer(
+        name: 'my_anonymizer', // a snake case string
+        pack: 'my_app', // a snake case string
+        description: 'Describe here if you want how your anonymizer works.'
+    )]
+    class MyAnonymizer extends AbstractAnonymizer
+    {
+
+      // ...
+  </code></pre>
+  <a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/custom-anonymizers.html" target="_blank"><img src="assets/doc.svg"/></a>
+  <aside class="notes" data-markdown="">
+    **SME**
+
+    * Custom anonymizer in src/Anomymizer
+    * Créer son pack avec le template dispo sur github
+
+    **to PRI**
+  </aside>
+</section>
+<section>
+  <h3>How does it work under the hood?</h3>
+  <img src="assets/anonymiztion-db-schema.svg"/>
+  <p>temporary alteration of your SQL schema</p>
+  <a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/internals.html#targeted-update-query" target="_blank"><img src="assets/doc.svg"/></a>
+  <aside class="notes" data-markdown="">
+    **PRI**
+
+    * Une table de sample par anonymizer
+    * une colonne d'index temporaire
+      * ça n'est pas une clée primaire
+      * c'est généré par une séquence
+      * ça n'a pas d'impact sur l'identité des lignes
+    * pas de risques : contexte anonymisation sur un dump
+  </aside>
+</section>
+<section>
+  <h3>How does it work under the hood?</h3>
+  <p>the SQL query in deep</p>
+  <pre><code class="language-sql" data-trim data-line-numbers="1-5|7-7|29-31|9-17|19-27">
+    UPDATE
+      "customer"
+    SET
+      "nom" = "sample_1"."value",
+      "civilite" = "sample_2"."value"
+
+    FROM "customer" AS "_target_table"
+
+    LEFT JOIN (
+      SELECT
+        "value",
+        ROW_NUMBER() OVER (ORDER BY random()) AS "rownum"
+      FROM "sample_1"
+      LIMIT 171224
+    ) AS "sample_1"
+    ON MOD("_target_table"."_db_tools_id", 589)
+      = "sample_1"."rownum"
+
+    LEFT JOIN (
+      SELECT
+        "value",
+        ROW_NUMBER() OVER (ORDER BY random()) AS "rownum"
+      FROM "sample_2"
+      LIMIT 171224
+    ) AS "sample_2"
+    ON MOD("_target_table"."_db_tools_id", 2)
+      = "sample_2"."rownum"
+
+    WHERE
+      "client"."_target_table" = "_target_table"."_db_tools_id"
+    ;
+  </code></pre>
+
+  <a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/internals.html#targeted-update-query" target="_blank"><img src="assets/doc.svg"/></a>
+  <aside class="notes" data-markdown="">
+    **PRI**
+
+    * SQL Standard UPDATE query cannot JOIN over the updated table,
+      * we only can use a cross join using the FROM statement.
+      * Other JOIN statements can only target tables from the FROM clause.
+      * cartesian production of the target table with itself
+    * to randomly select samples :
+      * ORDER BY random() clause.
+    * ROW_NUMBER() sur la random partition pour générer autant de lignes que de sample
+      * limit 171224 = nombre d'élément dans `customer`
+    * jointure par MOD() (modulo) : les tables de sample peuvent contenir moins de ligne que la table à anonymiser
+      * 589: nombre de lignes dans la table de sample_1
+      * 2: nombre de lignes dans la table de sample_2
+    * pour les multicolonne anonymizers : juste besoin de plusieurs `SET`
+    * il existe des variations pour chaque SGBD
+  </aside>
+</section>

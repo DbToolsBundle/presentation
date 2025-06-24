@@ -64,9 +64,11 @@ $headingTextTransform: none;
 	}
 
 	.grid-2 {
+		display: grid;
 		grid-template-columns: 1fr 1fr;
 	}
 	.grid-3 {
+		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 	ul {
