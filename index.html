@@ -469,10 +469,40 @@
 				</aside>
 			</section>
 			<section>
+				<h3>Setting Up Anonymization</h3>
+				<pre><code class="language-yaml" data-trim>
+				# db_tools.config.yaml
+
+				connections: "pgsql://username:password@hostname:port/database?version=16.0&other_option=..."
+
+				storage_directory: ./var/db_tools
+
+				backup_expiration_age: '6 months ago' # default '3 months ago'
+
+				backup_excluded_tables: ['table1', 'table2']
+
+				# ...
+
+				</code></pre>
+				<p>In a single YAML configuration file</p>
+
+				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/essentials.html#example" target="_blank"><img src="assets/doc.svg"/></a>
+				<aside class="notes" data-markdown>
+					**PRI**
+
+					* Seul `connections` est nécessaire
+					* Configurable via variable d'env
+					* Pour Symfony et laravel, c'est autoconfiguré, pas besoin du yaml
+				</aside>
+			</section>
+			<section>
 				<section>
 					<h3>Setting Up Anonymization</h3>
-					<pre><code class="language-yaml" data-trim data-line-numbers="4-4|5-5|6-8|9-11|12-14">
+					<pre><code class="language-yaml" data-trim data-line-numbers="7-7|8-8|9-11|12-14|15-17">
 						# db_tools.config.yaml
+
+						# ...
+
 						anonymization:
 								default:
 										customer:
@@ -649,6 +679,8 @@
 					**SME**
 
 					* Custom anonymizer in src/Anomymizer
+					* AbstractEnumAnonymizer
+					* AbstractMultipleColumnAnonymizer
 					* Créer son pack avec le template dispo sur github
 
 					**to PRI**
