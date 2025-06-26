@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
 	<link rel="stylesheet" href="dist/theme/makina.css">
-	<link rel="stylesheet" href="plugin/highlight/paraiso.css">
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
 </head>
 
 <body>
@@ -173,6 +173,23 @@
 				</aside>
 			</section>
 			<section>
+				<h3>3 Common Issues</h3>
+				<ul style="list-style: none;">
+					<li><strong>Easy</strong> configuration for data anonymization</li>
+					<li>A <strong>simple</strong> anonymization workflow</li>
+					<li>Making anonymization <strong>fast</strong></li>
+				</ul>
+				<aside class="notes" data-markdown>
+					**PRI**
+
+					Pourquoi les gens ne mettent pas en place d'anonymisation:
+
+					* Configurer *facilement* une anonymisation de données
+					* Mettre en place un worklow *simple*
+					* Rendre cette anonymisation *rapide*
+				</aside>
+			</section>
+			<section>
 				<h3>DbToolsBundle</h3>
 				<img src="assets/symfony+makina.svg" style="width:50%" />
 				<p>Built from real-world needs</p>
@@ -188,24 +205,6 @@
 						(rendre un peu de ce qu'on a pris)
 					* Encourager la communauté Symfony à mettre en place de l'anonymisation
 						mais aujourd'hui communauté PHP et Docker
-				</aside>
-			</section>
-			<section>
-				<h3>DbToolsBundle</h3>
-				<p>Try to address 3 common issues:</p>
-				<ul style="list-style: none;">
-					<li><strong>Easily</strong> configure data anonymization</li>
-					<li>A <strong>simple</strong> anonymization workflow</li>
-					<li>Making anonymization <strong>fast</strong></li>
-				</ul>
-				<aside class="notes" data-markdown>
-					**PRI**
-
-					Pourquoi les gens ne mettent pas en place d'anonymisation:
-
-					* Configurer *facilement* une anonymisation de données
-					* Mettre en place un worklow *simple*
-					* Rendre cette anonymisation *rapide*
 				</aside>
 			</section>
 			<section>
@@ -653,6 +652,20 @@
 					* Créer son pack avec le template dispo sur github
 
 					**to PRI**
+				</aside>
+			</section>
+			<section>
+				<h3>How does it work under the hood?</h3>
+				<ol >
+					<li>One update query per table to anonymize</li>
+					<li>Each anonymizer alter the update query</li>
+					<li>Queries are built with
+						<a href="https://php-query-builder.readthedocs.io/en/latest/">PHP Query Builder</a>
+					</li>
+				</ol>
+				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/internals.html#targeted-update-query" target="_blank"><img src="assets/doc.svg"/></a>
+				<aside class="notes" data-markdown="">
+					**PRI**
 				</aside>
 			</section>
 			<section>
