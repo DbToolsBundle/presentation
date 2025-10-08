@@ -176,7 +176,7 @@
 				<h3>3 Common Issues</h3>
 				<ul style="list-style: none;">
 					<li><strong>Easy</strong> configuration for data anonymization</li>
-					<li>A <strong>simple</strong> anonymization workflow</li>
+					<li>A <strong>secure</strong> anonymization workflow</li>
 					<li>Making anonymization <strong>fast</strong></li>
 				</ul>
 				<aside class="notes" data-markdown>
@@ -185,7 +185,7 @@
 					Pourquoi les gens ne mettent pas en place d'anonymisation:
 
 					* Configurer *facilement* une anonymisation de données
-					* Mettre en place un worklow *simple*
+					* Mettre en place un worklow *sécurisé*
 					* Rendre cette anonymisation *rapide*
 				</aside>
 			</section>
@@ -268,125 +268,6 @@
 				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/getting-started/database-vendors.html" target="_blank"><img src="assets/doc.svg"/></a>
 				<aside class="notes" data-markdown>
 					**PRI**
-
-					**to SME**
-				</aside>
-			</section>
-			<section>
-				<h3>Performance</h3>
-				<p>Try it on our <a href="https://github.com/DbToolsBundle/benchmark-app" target="_blank">benchmark app:</a></p>
-				<ul style="list-style: none;">
-					<li><p style="margin-bottom: 0px"><strong>4 Database connections</strong></p><small>(PostgreSQL, SQLite, MySQL, MariaDB)</small></li>
-					<li><strong>3 Entities to anonymize</strong>
-						<ul style="list-style: none;">
-							<li>
-								<strong class="emphase">Customer:</strong> email · password · lastname · firstname ·  age
-							</li>
-							<li>
-								<strong class="emphase">Address:</strong> a complete postal address (5 fields)
-							</li>
-							<li>
-								<strong class="emphase">Order:</strong> telephone · email · amount · note
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/performance.html" target="_blank"><img src="assets/doc.svg"/></a>
-				<aside class="notes" data-markdown>
-					**SME**
-				</aside>
-			</section>
-			<section>
-				<h3>Performance</h3>
-				<div class="r-stack">
-					<table style="transform: scale(80%) translateX(-15%)">
-						<tr>
-							<td>Customer</td>
-							<td>Address</td>
-							<td>Order</td>
-							<th>PostgreSQL</th>
-							<th>SQLite</th>
-							<th>MariaDB</th>
-							<th>MySQL</th>
-						</tr>
-						<tr class="fragment">
-							<td>100k</td>
-							<td>-</td>
-							<td>-</td>
-							<td>~5s</td>
-							<td>~7s</td>
-							<td>~20s</td>
-							<td>~53s</td>
-						</tr>
-						<tr class="fragment">
-							<td>1&nbsp;000k</td>
-							<td>-</td>
-							<td>-</td>
-							<td>~16s</td>
-							<td>~16s</td>
-							<td>~1m&nbsp;23s</td>
-							<td>~36m&nbsp;56s</td>
-						</tr>
-						<tr class="fragment">
-							<td>-</td>
-							<td>200k</td>
-							<td>-</td>
-							<td>~6s</td>
-							<td>~10s</td>
-							<td>~26s</td>
-							<td>~42s</td>
-						</tr>
-						<tr class="fragment">
-							<td>-</td>
-							<td>-</td>
-							<td>1&nbsp;000k</td>
-							<td>~16s</td>
-							<td>~11s</td>
-							<td>~1m&nbsp;15s</td>
-							<td>~25m&nbsp;1s</td>
-						</tr>
-						<tr class="fragment">
-							<td>100k</td>
-							<td>200k</td>
-							<td>-</td>
-							<td>~7s</td>
-							<td>~10s</td>
-							<td>~32s</td>
-							<td>~1m&nbsp;16s</td>
-						</tr>
-						<tr class="fragment">
-							<td>100k</td>
-							<td>200k</td>
-							<td>1&nbsp;000k</td>
-							<td>~24s</td>
-							<td>~25s</td>
-							<td>~1m&nbsp;40s</td>
-							<td>~36m&nbsp;47s</td>
-						</tr>
-					</table>
-				</div>
-				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/performance.html" target="_blank"><img src="assets/doc.svg"/></a>
-				<aside class="notes" data-markdown>
-					**SME**
-
-					attention, les résultats peuvent changer, prévoir +/- 10%
-				</aside>
-			</section>
-			<section>
-				<h3>Performance</h3>
-				<ul style="list-style: none;">
-					<li>Anonymizing with SQL only</li>
-					<li>One update query per table</li>
-					<li>Build with a complete <a href="https://php-query-builder.readthedocs.io/" target="_blank">query builder</a></li>
-				</ul>
-				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/internals.html" target="_blank"><img src="assets/doc.svg"/></a>
-				<aside class="notes" data-markdown="">
-					**SME**
-
-					* On anonymise des colonnes de DB et pas des champs d'entité
-					* La requête d'update est optimisé en fonction du type de base de données
-
-					**to PRI**
 				</aside>
 			</section>
 			<section>
@@ -399,7 +280,7 @@
 					* Depuis la version 2
 					* standalone, symfony, docker, laravel
 						(experimental en attente de retours commu)
-					* Documentation flavorisée
+					* Documentation flavorisée (icone doc sur chaque slide)
 					* Questions pour connaitre l'auditoire
 						Qui fait du symfony ? php ? laravel ? autre ?
 				</aside>
@@ -462,7 +343,7 @@
 				<aside class="notes" data-markdown>
 					**PRI**
 
-					* Mapper chaque donnée à anonymiser avec une méthode
+					* Mapper chaque colonne à anonymiser avec une méthode
 					d'anonymisation (un anonymiseur)
 					* Une liste d'anonymiseurs est fournit de base
 					* Mais on peut l'étendre
@@ -682,6 +563,107 @@
 					* AbstractEnumAnonymizer
 					* AbstractMultipleColumnAnonymizer
 					* Créer son pack avec le template dispo sur github
+					* A venir une nouvelle manière de créer des packs en no-code
+				</aside>
+			</section>
+			<section>
+				<h3>Performance</h3>
+				<p>Try it on our <a href="https://github.com/DbToolsBundle/benchmark-app" target="_blank">benchmark app:</a></p>
+				<ul style="list-style: none;">
+					<li><p style="margin-bottom: 0px"><strong>4 Databases</strong></p><small>(PostgreSQL, SQLite, MySQL, MariaDB)</small></li>
+					<li><strong>3 Tables to anonymize</strong>
+						<ul style="list-style: none;">
+							<li>
+								<strong class="emphase">Customer:</strong> email · password · lastname · firstname ·  age
+							</li>
+							<li>
+								<strong class="emphase">Address:</strong> a complete postal address (5 fields)
+							</li>
+							<li>
+								<strong class="emphase">Order:</strong> telephone · email · amount · note
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/performance.html" target="_blank"><img src="assets/doc.svg"/></a>
+				<aside class="notes" data-markdown>
+					**SME**
+				</aside>
+			</section>
+			<section>
+				<h3>Performance</h3>
+				<div class="r-stack">
+					<table style="transform: scale(80%) translateX(-15%)">
+						<tr>
+							<td>Customer</td>
+							<td>Address</td>
+							<td>Order</td>
+							<th>PostgreSQL</th>
+							<th>SQLite</th>
+							<th>MariaDB</th>
+							<th>MySQL</th>
+						</tr>
+						<tr class="fragment">
+							<td>100k</td>
+							<td>-</td>
+							<td>-</td>
+							<td>~5s</td>
+							<td>~7s</td>
+							<td>~20s</td>
+							<td>~53s</td>
+						</tr>
+						<tr class="fragment">
+							<td>1&nbsp;000k</td>
+							<td>-</td>
+							<td>-</td>
+							<td>~16s</td>
+							<td>~16s</td>
+							<td>~1m&nbsp;23s</td>
+							<td>~36m&nbsp;56s</td>
+						</tr>
+						<tr class="fragment">
+							<td>-</td>
+							<td>200k</td>
+							<td>-</td>
+							<td>~6s</td>
+							<td>~10s</td>
+							<td>~26s</td>
+							<td>~42s</td>
+						</tr>
+						<tr class="fragment">
+							<td>-</td>
+							<td>-</td>
+							<td>1&nbsp;000k</td>
+							<td>~16s</td>
+							<td>~11s</td>
+							<td>~1m&nbsp;15s</td>
+							<td>~25m&nbsp;1s</td>
+						</tr>
+						<tr class="fragment">
+							<td>100k</td>
+							<td>200k</td>
+							<td>-</td>
+							<td>~7s</td>
+							<td>~10s</td>
+							<td>~32s</td>
+							<td>~1m&nbsp;16s</td>
+						</tr>
+						<tr class="fragment">
+							<td>100k</td>
+							<td>200k</td>
+							<td>1&nbsp;000k</td>
+							<td>~24s</td>
+							<td>~25s</td>
+							<td>~1m&nbsp;40s</td>
+							<td>~36m&nbsp;47s</td>
+						</tr>
+					</table>
+				</div>
+				<a class="docs" href="https://dbtoolsbundle.readthedocs.io/en/stable/anonymization/performance.html" target="_blank"><img src="assets/doc.svg"/></a>
+				<aside class="notes" data-markdown>
+					**SME**
+
+					attention, les résultats peuvent changer, prévoir +/- 10%
 
 					**to PRI**
 				</aside>
@@ -783,7 +765,7 @@
 				<h3>Roadmap</h3>
 				<ul class="feature-list grid-3" style="gap: 1.5em;">
 					<li>
-						<p>Easy-to-configure datalist</p>
+						<p>No-Code Anonymizers Pack</p>
 						<small>(from csv, json...)</small>
 					</li>
 					<li>
@@ -791,14 +773,16 @@
 					</li>
 					<li><p>Pre/Post anonymization SQL queries</p></li>
 					<li><p>Whitelist conditions for rows</p></li>
-					<li><p>New core anonymizers</p></li>
+					<li>
+						<p>New core anonymizers</p>
+						<small>(string patterns, sample from file...)</small>
+					</li>
 					<li><p>Other Database vendors ?</p></li>
 				</ul>
 				<aside class="notes" data-markdown>
 					**PRI**
 
-					* question qui utilise sgbd psql, sqlite, mysql..
-					* new core anonymizers : Ip (v4 & v6) address, Mac address, longitude/latitude, uuid, raison sociale
+					* question qui utilise autres sgbd que psql, sqlite, mysql..
 
 					**to SME**
 				</aside>
@@ -839,24 +823,34 @@
 				</aside>
 			</section>
 
-			<section>
+			<section id="thanks">
 				<h3>
 					<img src="assets/logo.png" style="max-height:90px;margin: 0; transform: translateY(25px);"></img>
 					Thanks, any question?
 				</h3>
-				<div style="display: flex; justify-content: space-between;">
+				<div style="display: flex; justify-content: space-between; align-items: center;">
 					<div style="font-size: 0.6em;width:50%">
 						<p>Resources:</p>
 						<ul>
-							<li><a href="https://dbtoolsbundle.github.io/presentation">dbtoolsbundle.github.io/presentation</a></li>
-							<li><a href="https://dbtoolsbundle.readthedocs.io/" target="_blank">Documentation on ReadTheDocs</a></li>
-							<li><a href="https://github.com/makinacorpus/DbToolsBundle" target="_blank">Source code on Github</a></li>
-							<li><a href="https://makina-corpus.com/symfony/decouvrez-le-dbtoolsbundle" target="_blank">Introduction to DbtoolsBundle on Makina's blog [fr]</a></li>
+							<li style="text-align: left;">
+								<a href="https://dbtoolsbundle.github.io/presentation">dbtoolsbundle.github.io/presentation</a>
+							</li>
+							<li style="text-align: left;">
+								<a href="https://dbtoolsbundle.readthedocs.io/" target="_blank">Documentation on ReadTheDocs</a>
+							</li>
+							<li style="text-align: left;">
+								<a href="https://github.com/makinacorpus/DbToolsBundle" target="_blank">Source code on Github</a>
+							</li>
+							<li style="text-align: left;">
+								<a href="https://makina-corpus.com/symfony/decouvrez-le-dbtoolsbundle" target="_blank">Introduction to DbtoolsBundle on Makina's blog [fr]</a>
+							</li>
+							<li style="text-align: left;">
+								<a href="https://openfeedback.io/devfestnantes2025/2025-10-16/nelaissezplustrainervosdonneesdeprodanonymisezlesavecdbtoolsbund" target="_blank">Open Feedback</a>
+							</li>
 						</ul>
 					</div>
 					<div style="font-size: 0.6em">
-						<p>Lien Open Feedback:</p>
-						<img src="assets/openfeedback.svg" width="250px"/>
+						<img src="assets/qrcode.svg" width="350px"/>
 					</div>
 				</div>
 			</section>
